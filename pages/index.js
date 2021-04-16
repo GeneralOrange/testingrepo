@@ -2,6 +2,12 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const _array = [
+    'test',
+    'test1',
+    'test2'
+  ];
+
   return (
     <div className={styles.container}>
       <Head>
@@ -10,6 +16,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        {_array.map(value => (
+          <bold>{value}</bold>
+        ))}
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
