@@ -12,6 +12,8 @@ export async function getStaticPaths() {
     const res = await fetch(`${process.env.API_ENDPOINT}/pages`);
     const pages = await res.json();
 
+    console.log(Array.from(pages));
+
     const paths = Array.from(pages).map((page) => ({
         params: { slug: page.slug }
     }))
