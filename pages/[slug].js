@@ -1,8 +1,9 @@
 export default function Page({ data })
 {
     return (
+        
         <>
-            test123
+            <h1>{data.page.name}</h1>
         </>
       )
 }
