@@ -10,10 +10,13 @@ export default function Page({ data })
 
 
 export async function getStaticPaths() {
-    const res = await fetch(`${process.env.API_ENDPOINT}/pages`);
-    const pages = await res.json();
+    const res = await fetch(`${process.env.API_ENDPOINT}/pages`)
+    .then((res)=> {
+        return res.json()
+    });
+    //const pages = await res.json();
 
-    const paths = pages.map((page) => ({
+    const paths = res.map((page) => ({
         params: { slug: page.slug }
     }))
 
